@@ -22,20 +22,10 @@ public class Carrera implements Serializable {
     @Column(name = "id_carrera", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_periodo_academico")
-    private PeriodoAcademico idPeriodoAcademico;
-
     @Column(name = "nombre_carrera", length = 45)
     private String nombreCarrera;
 
     @Column(name = "descripcion", length = 45)
     private String descripcion;
-
-    @OneToMany(mappedBy = "idCarrera")
-    private Set<Evaluacion> evaluacions = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "idCarrera")
-    private Set<Ciclo> ciclos = new LinkedHashSet<>();
 
 }

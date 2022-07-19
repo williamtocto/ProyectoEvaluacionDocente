@@ -6,8 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "formulario")
@@ -27,11 +26,11 @@ public class Formulario {
     @Column(name = "observacion", length = 45)
     private String observacion;
 
-    @OneToMany(mappedBy = "idFormulario")
+   /* @OneToMany(mappedBy = "idFormulario")
     private Set<Evaluacion> evaluacions = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "idFormulario")
-    private Set<FormularioTipoformulario> formularioTipoformularios = new LinkedHashSet<>();
+    private Set<FormularioTipoformulario> formularioTipoformularios = new LinkedHashSet<>();*/
 
 
 }

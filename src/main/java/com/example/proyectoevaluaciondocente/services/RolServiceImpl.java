@@ -1,7 +1,7 @@
 package com.example.proyectoevaluaciondocente.services;
 
 import com.example.proyectoevaluaciondocente.model.Rol;
-import com.example.proyectoevaluaciondocente.repository.PersonaRepository;
+
 import com.example.proyectoevaluaciondocente.repository.RolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -24,7 +24,6 @@ public class CarreraController {
 
     @PostMapping("/crear")
     public ResponseEntity<Carrera> crearLista(@RequestBody Carrera u) {
-
         return new ResponseEntity<>(listaService.create(u), HttpStatus.CREATED);
     }
 
@@ -39,11 +38,9 @@ public class CarreraController {
     public ResponseEntity<Carrera> actualizarLista(@PathVariable Integer id, @RequestBody Carrera c) {
 
        Carrera listaActual=listaService.findById(id);
-
             listaActual.setNombreCarrera(c.getNombreCarrera());
             listaActual.setDescripcion(c.getDescripcion());
             listaService.save(listaActual);
-
        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
 

@@ -15,6 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Evaluacion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_evaluacion", nullable = false)
@@ -29,29 +30,28 @@ public class Evaluacion {
     @Column(name = "observacion")
     private String observacion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_carrera")
-    private Carrera idCarrera;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_ciclo")
-    private Ciclo idCiclo;
+    @Column(name = "id_carrera")
+    private int idCarrera;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_formulario")
-    private Formulario idFormulario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_ciclo")
+    private int idCiclo;
+
+
+    @Column(name = "id_formulario")
+    private int idFormulario;
+
+
     @JoinColumn(name = "id_materia")
-    private Materia idMateria;
+    private int idMateria;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_persona")
-    private Persona idPersona;
+    @Column(name = "id_persona")
+    private int idPersona;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_tipo_formulario")
-    private TipoFormulario idTipoFormulario;
+
+    @Column(name = "id_tipo_formulario")
+    private int idTipoFormulario;
 
 
 }

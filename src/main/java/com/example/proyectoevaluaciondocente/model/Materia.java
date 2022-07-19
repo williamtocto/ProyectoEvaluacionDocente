@@ -6,8 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "materia")
@@ -18,20 +17,18 @@ import java.util.Set;
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_materia", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
     @Column(name = "nombre_Materia", length = 45)
     private String nombreMateria;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_ciclo")
-    private Ciclo idCiclo;
 
+    @Column(name = "id_ciclo")
+    private int id_Ciclo;
+
+    /*
     @OneToMany(mappedBy = "idMateria")
-    private Set<Evaluacion> evaluacions = new LinkedHashSet<>();
-
-
-
+    private Set<Evaluacion> evaluacions = new LinkedHashSet<>();*/
 
 }

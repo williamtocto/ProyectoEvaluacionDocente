@@ -24,18 +24,17 @@ public class Ciclo {
     @Column(name = "ciclo", length = 45)
     private String ciclo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_carrera")
-    private Carrera idCarrera;
+ //  @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_carrera")
+    private int idCarrera;
 
     @Column(name = "observaciones", length = 45)
     private String observaciones;
 
-    @OneToMany(mappedBy = "idCiclo")
+   /* @OneToMany(mappedBy = "idCiclo")
     private Set<Evaluacion> evaluacions = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "idCiclo")
-    private Set<Materia> materias = new LinkedHashSet<>();
-
+    private Set<Materia> materias = new LinkedHashSet<>();*/
 
 }

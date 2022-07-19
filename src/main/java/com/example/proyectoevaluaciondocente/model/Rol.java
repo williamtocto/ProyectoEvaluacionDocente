@@ -1,9 +1,9 @@
 package com.example.proyectoevaluaciondocente.model;
 
 import javax.persistence.*;
-import java.time.Instant;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.Date;
+
+
 
 @Entity
 @Table(name = "rol")
@@ -20,10 +20,9 @@ public class Rol {
     private String descripcion;
 
     @Column(name = "fecha_hora_registro")
-    private Instant fechaHoraRegistro;
+    private Date fechaHoraRegistro;
 
-    @OneToMany(mappedBy = "idRol")
-    private Set<Usuario> usuarios = new LinkedHashSet<>();
-
+    /*@OneToMany(mappedBy = "idRol")
+    private Set<Usuario> usuarios = new LinkedHashSet<>();*/
 
 }
