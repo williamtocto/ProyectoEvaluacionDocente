@@ -1,5 +1,7 @@
 package com.example.proyectoevaluaciondocente.controller;
 
+import com.example.proyectoevaluaciondocente.model.Carrera;
+import com.example.proyectoevaluaciondocente.model.Ciclo;
 import com.example.proyectoevaluaciondocente.model.Rol;
 import com.example.proyectoevaluaciondocente.services.RolServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,20 @@ public class RolController {
     @GetMapping("/search/{id}")
     public  ResponseEntity<Rol> search(@PathVariable Integer id){
         return new ResponseEntity<>(rolService.findById(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<Rol> actualizarLista(@PathVariable Integer id, @RequestBody Rol c) {
+
+        Rol listaActual=rolService.findById(id);
+        listaActual.setDescripcion(c.getDescripcion());
+        listaActual.setRol(c.getRol());
+        listaActual.setId_rol(c.getId_rol());
+        listaActual.setFechaHoraRegistro(c.getFechaHoraRegistro());
+        rolService.save(listaActual);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+
     }
 
 }

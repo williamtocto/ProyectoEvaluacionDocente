@@ -1,6 +1,7 @@
 package com.example.proyectoevaluaciondocente.controller;
 
 import com.example.proyectoevaluaciondocente.model.Formulario;
+import com.example.proyectoevaluaciondocente.model.Rol;
 import com.example.proyectoevaluaciondocente.services.FormularioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,19 @@ public class FormularioController {
     @GetMapping("/search/{id}")
     public  ResponseEntity<Formulario> search(@PathVariable Integer id){
         return new ResponseEntity<>(formularioService.findById(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<Rol> actualizarLista(@PathVariable Integer id, @RequestBody Formulario c) {
+
+        Formulario listaActual=formularioService.findById(id);
+        listaActual.setObservacion(c.getObservacion());
+        listaActual.setPreguntas(c.getPreguntas());
+
+        formularioService.save(listaActual);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+
     }
 
 }

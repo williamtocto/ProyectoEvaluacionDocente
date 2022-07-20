@@ -44,6 +44,7 @@ public class CicloController {
        Ciclo listaActual= cicloService.findById(id);
 
            listaActual.setIdCarrera(c.getIdCarrera());
+           listaActual.setCiclo(c.getCiclo());
            listaActual.setObservaciones(c.getObservaciones());
             cicloService.save(listaActual);
 

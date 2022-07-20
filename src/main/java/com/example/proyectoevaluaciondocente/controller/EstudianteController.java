@@ -42,7 +42,7 @@ public class EstudianteController {
        Estudiante listaActual=listaService.findById(id);
 
            listaActual.setNombre(c.getNombre());
-           listaActual.setNombre(c.getApellido());
+           listaActual.setApellido(c.getApellido());
            listaActual.setCedula(c.getCedula());
             listaService.save(listaActual);
 

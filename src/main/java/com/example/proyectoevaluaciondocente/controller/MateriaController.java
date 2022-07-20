@@ -39,6 +39,7 @@ public class MateriaController {
         Materia listaActual=materiaService.findById(id);
 
         listaActual.setNombreMateria(c.getNombreMateria());
+        listaActual.setId_Ciclo(c.getId_Ciclo());
         materiaService.save(listaActual);
 
         return null;
