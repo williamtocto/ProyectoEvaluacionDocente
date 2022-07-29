@@ -1,7 +1,5 @@
 package com.example.proyectoevaluaciondocente.controller;
 
-import com.example.proyectoevaluaciondocente.model.Carrera;
-import com.example.proyectoevaluaciondocente.model.Ciclo;
 import com.example.proyectoevaluaciondocente.model.Rol;
 import com.example.proyectoevaluaciondocente.services.RolServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -33,8 +33,7 @@ public class CarreraController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
-   @PutMapping("/actualizar/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Carrera> actualizarLista(@PathVariable Integer id, @RequestBody Carrera c) {
 
        Carrera listaActual=listaService.findById(id);
@@ -42,8 +41,6 @@ public class CarreraController {
             listaActual.setDescripcion(c.getDescripcion());
             listaService.save(listaActual);
        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-
     }
 
 }
